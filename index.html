@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="description" content="AceCoder: Acing Coder RL via Automated Test-Case Synthesis">
     <meta property="og:title" content="AceCoder: Acing Coder RL via Automated Test-Case Synthesis" />
-    <meta property="og:description" content="We propose Critique Fine-Tuning (CFT), where models learn to critique noisy responses rather than simply imitate correct ones." />
+    <meta property="og:description" content="We propose AceCoder, where we push the limits of coder models with reinforcement learning through large-scale test case synthesis" />
     <meta property="og:url" content="https://github.com/TIGER-AI-Lab/AceCoder" />
     <meta property="og:image" content="" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-    <title>Critique Fine-Tuning</title>
+    <title>AceCoder: Acing Coder RL via Automated Test-Case Synthesis</title>
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
     <link rel="stylesheet" href="static/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -25,27 +25,43 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1 class="title is-1 publication-title">
-                            AceCoder: Acing Coder RL via Automated Test-Case Synthesis
+                            🂡 AceCoder: Acing Coder RL via Automated Test-Case Synthesis
                         </h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                                <sup>♠️</sup>Huaye Zeng,
+                                <a href="https://www.wyett-zeng.com/about.html" style="text-decoration: none; color: inherit;"><sup>♠️</sup>Huaye Zeng*</a>,
                             </span>
                             <span class="author-block">
-                                <sup>♠️</sup>Dongfu Jiang,
+                                <a href="https://jdf-prog.github.io/" style="text-decoration: none; color: inherit;"><sup>♠️</sup>Dongfu Jiang*</a>,
                             </span>
                             <span class="author-block">
-                                Haozhe Wang
-                            </span>
+                                <sup>♥</sup>Haozhe Wang
+                            </span>,
                             <span class="author-block">
-                                Ping Nie
-                            </span>
+                                <sup>♦</sup>Ping Nie
+                            </span>,
                             <span class="author-block">
-                                Xiaotong Chen
-                            </span>
+                                <sup>♦</sup>Xiaotong Chen
+                            </span>,
                             <span class="author-block">
-                                <sup>♠️</sup>Wenhu Chen
+                                <a href="https://wenhuchen.github.io/" style="text-decoration: none; color: inherit;"><sup>♠️</sup>Wenhu Chen</a>,
                             </span>
+                        </div>
+
+                        
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <sup>♠️</sup>University of Waterloo,
+                                <sup>♥</sup>HKUST,
+                                <sup>♦</sup>NetMind.AI
+                            </span>
+                            <br>
+                            <span class="author-block">*Equal Contribution</span><br>
+                            <span class="author-block">Corresponding to:</span>
+                            <span class="author-block"><a href="mailto:w33zeng@uwaterloo.ca">w33zeng@uwaterloo.ca</a>,</span>
+                            <span class="author-block"><a href="mailto:dongfu.jiang@uwaterloo.ca">dongfu.jiang@uwaterloo.ca</a>,</span>
+                            <span class="author-block"><a href="mailto:wenhuchen@uwaterloo.ca">wenhuchen@uwaterloo.ca</a></span>
                         </div>
 
                         <div class="column has-text-centered">
@@ -73,7 +89,7 @@
                                 </span>
 
                                 <span class="link-block">
-                                  <a href="#" target="_blank"
+                                  <a href="https://huggingface.co/datasets/TIGER-Lab/AceCode-89K" target="_blank"
                                   class="external-link button is-normal is-rounded is-dark">
                                       <span class="icon">
                                         🤗
@@ -83,7 +99,7 @@
                                 </span>
 
                                 <span class="link-block">
-                                  <a href="#" target="_blank"
+                                  <a href="https://huggingface.co/collections/TIGER-Lab/acecoder-67a16011a6c7d65cad529eba" target="_blank"
                                   class="external-link button is-normal is-rounded is-dark">
                                       <span class="icon">
                                         🤗
@@ -93,51 +109,137 @@
                                 </span>
                             </div>
                         </div>
-
-                        <div class="is-size-5 publication-authors">
-                            <span class="author-block">
-                                <sup>♠️</sup>University of Waterloo,
-                                HKUST,
-                                NetMind.AI
-                            </span>
-                            <br>
-                            <span class="author-block">
-                                <small>
-                                    yubo.wang.sunny@gmail.com,
-                                    wenhuchen@uwaterloo.ca
-                                </small>
-                            </span>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section hero is-light">
-        <div class="container is-max-desktop">
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                    <h1 class="title is-3">Abstract</h1>
-                    <div class="content has-text-justified">
-                        <p>
-                            Recent years have witnessed the great performance of code model in code generation, code fix, etc. However, most recent work has been focused on supervised-fine-tuning (SFT) while the potential of reinforcement learning in training code models has been untapped. This is mostly hindered by the lack of reliable reward signals in the code domain. In this paper, we aim to empower code model training with automated test-case synthesis on a large scale. Specifically, we design a pipeline to synthesize large-scale (question, test-cases) pairs from existing seed code data.
-                        </p>
-                    </div>
-                </div>
+
+    <section class="section">
+        <div class="container" style="margin-bottom: 2vh;margin-top: -9vh;">
+          <!-- Abstract. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">🔔News</h2>
+              <div class="content has-text-justified">
+                <p>
+                    <b>🔥[2025-02-03] Our paper <a href="https://arxiv.org/abs/2409.02813">AceCoder</a> is out. <a href="https://huggingface.co/collections/TIGER-Lab/acecoder-67a16011a6c7d65cad529eba">Models</a> and <a href="https://huggingface.co/datasets/TIGER-Lab/AceCode-89K">Datasets</a> are also released 🚀.</b>
+                </p>
+              </div>
+              <h2 class="title is-3">Introduction</h2>
+              <div class="content has-text-justified">
+                <p>
+                    Most progress in recent coder models has been driven by supervised fine-tuning (SFT), while the potential of reinforcement learning (RL) remains largely unexplored, primarily due to the lack of reliable reward data/model in the code domain. In this paper, we address this challenge by leveraging automated large-scale test-case synthesis to enhance code model training. Specifically, we design a pipeline that generates extensive (question, test-cases) pairs from existing code data. Using these test cases, we construct preference pairs based on pass rates over sampled programs to train reward models with Bradley-Terry loss. It shows an average of <b>10</b>-point improvement for Llama-3.1-8B-Ins and <b>5</b>-point improvement for Qwen2.5-Coder-7B-Ins through best-of-32 sampling, making the 7B model <b>on par with</b> 236B DeepSeek-V2.5. Furthermore, we conduct reinforcement learning with both reward models and test-case pass rewards, leading to consistent improvements across HumanEval, MBPP, BigCodeBench, and LiveCodeBench (V4). Notably, we follow the R1-style training to start from Qwen2.5-Coder-base directly and show that our RL training can improve model on HumanEval-plus by over <b>25%</b> and MBPP-plus by <b>6%</b> for merely <b>80</b> optimization steps. We believe our results highlight the huge potential of reinforcement learning in coder models. 
+                </p>
+              </div>
             </div>
+          </div>
+          <!--/ Abstract. -->
+      </div>
+      </section>
+
+    <section class="hero is-light is-small">
+        <div class="hero-body has-text-centered">
+          <h1 class="title is-1 acecoder">
+              🂡
+            <span class="acecoder">AceCoder</span>
+          </h1>
         </div>
     </section>
+
+
+    <section class="section">
+        <div class="container">
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Overview</h2>
+              <div class="content has-text-justified">
+                <p>
+                    We introduce <b>AceCoder</b>, the first work to propose a fully automated pipeline for synthesizing large-scale reliable tests used for the reward model training and reinforcement learning in the coding scenario. To do this, we curated the dataset <b>AcoCode-89K</b>, where we start from a seed code dataset and prompt powerful LLMs to "imagine" proper test cases for the coding question and filter the noisy ones. We sample inferences from existing coder models and compute their pass rate as the reliable and verifiable rewards for both training the reward model and conducting the reinforcement learning for coder LLM.
+                </p>
+                <div class="content has-text-centered">
+                    <img src="static/images/ac_overview.png" alt="algebraic reasoning" width="100%"/>
+                    <p> Overall Workflow of our model: We start from the seed code dataset to create well-formatted questions and corresponding test cases. Then we adopt strong models like filter the noisy test cases. Finally, we adopt these test cases to harvest positive and negative program pairs for reward model training and RL.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Best-of-N Results</h2>
+              <div class="content has-text-justified">
+                <p>
+                    We trained two reward model <a href="https://huggingface.co/TIGER-Lab/AceCodeRM-7B">AceCodeRM-7B</a> and <a href="https://huggingface.co/TIGER-Lab/AceCodeRM-32B">AceCodeRM-32B</a> on the constructed <a href="https://huggingface.co/datasets/TIGER-Lab/AceCodePair-300K">preference pairs</a>. We evaluate the performance of our reward models through the best-of-N experiments on the 4 popular coding benchmarks. Results show consistent improvement across all benchmarks, demonstrating the effectiveness of our reward models.
+                </p>
+                <div class="box m-5">
+                    <div class="content has-text-centered">
+                      <img src="static/images/ac_table2.png" alt="main best-of-N results" class="center" width="100%"/>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">RL Results</h2>
+              <div class="content has-text-justified">
+                <p>
+                    We perform RL training from three policy models: <a href="https://huggingface.co/Qwen/Qwen2.5-7B-Instruct">Qwen2.5-7B-Instruct</a> and <a href="https://huggingface.co/Qwen/Qwen2.5-Coder-7B">Qwen2.5-Coder-7B-Base</a> and <a href="https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct">Qwen2.5-Coder-7B-Instruct</a>. Two types of reward can be used, i.e. the trained reward model RM-7B and the rule-based reward, i.e. pass rate over the test cases in dataset. During training, we set the pass rate to be a binary reward, which is 1.0 when all test cases passed, otherwise 0. Similar to DeepSeek-R1, we also experiment with RL from the base model because SFT may cause the search space of the model to be stuck in the local minimum. Since coding is also a highly verifiable task like math, we include the Qwen2.5-Coder-7B-Base in our experiments. We see consisteny performance improvement across all benchmarks. And directly RL from the Base Qwen2.5-Coder model can get <b>25%</b> improvement on HumanEval-plus and <b>6%</b> on MBPP-plus within just <b>80</b> optimization steps.
+                </p>
+                <div class="box m-5">
+                    <div class="content has-text-centered">
+                      <img src="static/images/ac_table3.png" alt="RL results" class="center" width="100%"/>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-centered m-6">
+            <div class="column is-full has-text-centered content">
+              <h2 class="title is-3">Ablation Study</h2>
+              <div class="carousel results-carousel">
+                <div class="box m-5">
+                  <div class="content has-text-centered">
+                    <img src="static/images/ac_table4.png" alt="Comparion with other RM" width="95%"/>
+                    <p> Existing top-ranked reward models on Reward Bench can perform pretty bad for best-of-N sampling in the coding scenarion, and sometime can underperform the greedy results. However, our AceCodeRM-7B consistently outperform them with an average of <b>6.9</b> improvement </p>
+                  </div>
+                </div>
+                <div class="box m-5">
+                  <div class="content has-text-centered">
+                    <img src="static/images/ac_table5.png" alt="Test case filtering matters" width="95%"/>
+                    <p>We also conduct experiments to investigate how filtering the test cases with a proxy model can affect the results. As shown in table, training RM on data after the filtering improve the performance significantly, especially for those hard code questions like MBPP-Plus and BigCodeBench-Hard (C/I). We believe this is because the test case filtering can ensure the remaining ones are consistent with each other and thus point to the same implicit program, which improves the quality of the rewards.</p>
+                  </div>
+                </div>
+                <div class="box m-5">
+                  <div class="content has-text-centered">
+                    <img src="static/images/ac_table6.png" alt="RM Backbone Matters" width="95%"/>
+                    <p> We show that Qwen2.5-Coder is a better backbone for the reward model compared to Llama-3.1-8B. This is because the Qwen2.5-Coder models have been pre-trained on way more code-related data compared to the Llama-3.1 models, and thus more knowledgeable when tuning it into a reward model.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
 
     <!-- BibTeX citation -->
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
             <h2 class="title">Reference</h2>
             Please kindly cite our paper if you use our code or results:
-            <pre><code>
-                
-            </code></pre>
+            <pre><code>@article{AceCoder,
+    title={AceCoder: Acing Coder RL via Automated Test-Case Synthesis},
+    author={Zeng, Huaye and Jiang, Dongfu and Wang, Haozhe and Nie, Ping and Chen, Xiaotong and Chen, Wenhu},
+    journal={ArXiv},
+    year={2025},
+    volume={abs/2207.01780}
+}</code></pre>
         </div>
     </section>
 
