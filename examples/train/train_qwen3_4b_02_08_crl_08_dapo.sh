@@ -49,11 +49,11 @@ export NCCL_DEBUG=INFO
 export VLLM_USE_V1=1
 rollout_mode='async'
 
-# temp file for action tokens as verl cannot pass special strs as params
-# action_stop_tokens_file="$(pwd)$(mktemp)"
-# mkdir -p $(dirname $action_stop_tokens_file)
-# echo -e -n "$action_stop_tokens" | tee $action_stop_tokens_file
-# echo "action_stop_tokens_file=$action_stop_tokens_file"
+temp file for action tokens as verl cannot pass special strs as params
+action_stop_tokens_file="$(pwd)$(mktemp)"
+mkdir -p $(dirname $action_stop_tokens_file)
+echo -e -n "$action_stop_tokens" | tee $action_stop_tokens_file
+echo "action_stop_tokens_file=$action_stop_tokens_file"
 
 # host=$(hostname -i | awk '{print $1}')
 # port=$(shuf -i 30000-31000 -n 1)
