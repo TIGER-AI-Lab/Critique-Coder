@@ -52,7 +52,7 @@ async def parallel_compute_score_async(
         try:
             # Create tasks for all rows
             tasks_async = [
-                single_compute_score(evaluation_func, c, r, t, ei, executor, timeout=300.0)
+                single_compute_score(evaluation_func, c, r, t, ei, executor, timeout=1200.0)
                 for c, r, t, ei in zip(completions, references, tasks, extra_info, strict=True)
             ]
             results = await asyncio.gather(*tasks_async, return_exceptions=False)
