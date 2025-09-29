@@ -1,0 +1,16 @@
+[project]
+name = "verl-tool"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fire>=0.7.0",
+    "verl",
+]
+
+[tool.uv.sources]
+verl = { path = "verl" }
+
+[tool.setuptools]
+packages = ["verl_tool"]  # Explicitly specify only the verl_tool package
