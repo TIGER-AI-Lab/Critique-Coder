@@ -14,3 +14,11 @@ verl = { path = "verl" }
 
 [tool.setuptools]
 packages = ["verl_tool"]  # Explicitly specify only the verl_tool package
+
+[project.optional-dependencies]
+vllm = [
+    "vllm<0.9.0",
+]
+acecoder = [
+    "AceCoder @ git+https://github.com/TIGER-AI-Lab/AceCoder.git@dev",
+]
