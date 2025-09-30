@@ -142,7 +142,7 @@ class CRLRewardManager:
         results = []
         for extracted_answer in response_str:
             # matches = re.findall(r'Conclusion\s*\[(.*?)\]', extracted_answer)
-            matches = re.findall(r"/conclusion\{(.*?)\}", extracted_answer)
+            matches = re.findall(r"\\conclusion\{(.*?)\}", extracted_answer)
             if matches:
                 if 'T' in matches[-1]:
                     results.append(True)
@@ -154,9 +154,9 @@ class CRLRewardManager:
             else:
                 results.append(None)
                 
-        print('prompt_str: ', prompt_str[0])
-        print('response_str: ', response_str[0])
-        print('results: ', results[:20])
+        # print('prompt_str: ', prompt_str[0])
+        # print('response_str: ', response_str[0])
+        # print('results: ', results[:20])
         true_count = results.count(True)
         false_count = results.count(False)
         total_true_false = true_count + false_count
@@ -169,9 +169,6 @@ class CRLRewardManager:
         true_ratio = true_count / total_true_false if total_true_false > 0 else 0
         print(f"correctness, True在True和False中的比例是: {true_ratio}")
         assert len(results) == len(acecoder_correctness), f'length of results {len(results)} and correctness {len(acecoder_correctness)} must be the same. length of response_str {len(response_str)}'
-        
-        # repetition_penalty, penalty_symbol = add_penalty(results)
-        # print('repetition_penalty: ', repetition_penalty, 'penalty_symbol: ', penalty_symbol)
         
         for result, correctness, score in zip(results, acecoder_correctness, scores):
             if result is not None:
@@ -189,72 +186,9 @@ class CRLRewardManager:
                 score['pass_rate'] = 0.0
                 score['binary_pass_rate'] = 0.0
                 score['score'] = 0.0
-                
-        # data_sources = data.non_tensor_batch['data_source']
-        # # 1. Testing code on the test cases
-        # question_hashes = [hash_string(question) for question in prompt_str]
-        # # ensure the length of lists are of the same, avoid Ray error
-        # assert len(response_str) == len(test_cases) == len(data_sources)
-        # # before perform batched scoring: dump the statistics of the list of responses
-        # samples = [
-        #     {
-        #         'task_id': question_hash,
-        #         'prompt': question,
-        #         'output': answer,
-        #         'original_response': response,
-        #         'tests': list(test_case),
-        #         '_identifier': f"{question_hash}_{i}"
-        #     }
-        #     for i, (question_hash, question, answer, test_case, response) in enumerate(zip(question_hashes, prompt_str, extracted_answers, test_cases, response_str))
-        # ]
-        # # save the dumped samples to a file
-        # temp_file = self.record_dir / f"step-{self.step_idx}_{hash_string(''.join(question_hashes))}.jsonl"
-        # with open(temp_file, "w") as f:
-        #     for sample in samples:
-        #         f.write(json.dumps(sample) + "\n")
-        # # perform batched scoring for coding score: call the acecoder evaluation script to retrieve the coder part scores
-        # output_file = Path(temp_file).with_suffix(f".eval_results_binary.jsonl").absolute()
-        # command = f"python -m acecoder.eval_test_cases --samples {temp_file} --n_workers {self.n_workers} \
-        #     --extract_solution True --output_file {output_file} --test_details True \
-        #     --i_just_wanna_run True --min_time_limit 1 --gt_time_limit_factor 1"
-        # start = time.time()
-        # subprocess.run(command, shell=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
-        # end = time.time()
-        # print(f"Step {self.step_idx}: acecoder evaluation script took {end - start:.2f} seconds for {len(samples)} samples.")
-        # # the script will dump the results into the output_file, read it and parse it as a list
-        # with open(output_file, "r") as f:
-        #     all_samples_results = [json.loads(x) for x in f]
-        # pass_rates = [x['eval_results']['pass_rate'] for x in all_samples_results]
-        # # print the error statistics
-        # # syntax error
-        # code_error = [x['eval_results']['code_error'] for x in all_samples_results]
-        # # remove the temp_file and output_file after finish code pass rate computation and result extraction
-        # test_case_error = [[x['eval_results']['details'][i]['reason'] for i in range(len(x['eval_results']['details']))] for x in all_samples_results]
-        # print(f"Step {self.step_idx}: acecoder evaluation script error statistics for {len(samples)} samples.")
+    
         num_empty = sum([1 for result in results if result == None])
         print(f" - Empty conclusion: {num_empty} ({num_empty / len(results) * 100:.2f}%)")
-        # print(f" - Syntax error: {sum([1 for x in code_error if x])} ({len([x for x in code_error if x]) / len(code_error) * 100:.2f}%)")
-        # print(" - Test case error:")    
-        # counter = Counter()
-        # for i in range(len(test_case_error)):
-        #     if test_case_error[i]:
-        #         counter.update(test_case_error[i])
-        # for k, v in counter.items():
-        #     print(f"   - {k}: {v} ({v / len(test_case_error) * 100:.2f}%)")
-        # # print the pass rate statistics
-        # try:
-        #     os.remove(temp_file)
-        #     os.remove(output_file)
-        # except:
-        #     pass
-        
-        # for i in range(len(scores)):
-        #     scores[i]['pass_rate'] = pass_rates[i]
-        #     scores[i]['binary_pass_rate'] = 1.0 if pass_rates[i] == 1.0 else 0.0
-        #     if self.binary:
-        #         scores[i]['score'] = 1.0 if pass_rates[i] == 1.0 else -1.0 # -1.0 for failed test cases
-        #     else:
-        #         scores[i]['score'] = pass_rates[i]
         return scores
     
     def get_acecoder_data_score(self, data: DataProto, response_str, prompt_str, extracted_answers, test_cases):
