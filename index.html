@@ -2,15 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="AceCoder: Acing Coder RL via Automated Test-Case Synthesis">
-    <meta property="og:title" content="AceCoder: Acing Coder RL via Automated Test-Case Synthesis" />
-    <meta property="og:description" content="We propose AceCoder, where we push the limits of coder models with reinforcement learning through large-scale test case synthesis" />
-    <meta property="og:url" content="https://github.com/TIGER-AI-Lab/AceCoder" />
+    <meta name="description" content="Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning">
+    <meta property="og:title" content="Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning" />
+    <meta property="og:description" content="We propose Critique-Coder, where we introduce Critique Reinforcement Learning (CRL) as a complement to RL, enhancing models with stronger critique and reflection abilities" />
+    <meta property="og:url" content="https://github.com/TIGER-AI-Lab/Critique-Coder" />
     <meta property="og:image" content="" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-    <title>AceCoder: Acing Coder RL via Automated Test-Case Synthesis</title>
+    <title>Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning</title>
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
     <link rel="stylesheet" href="static/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -25,26 +25,20 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1 class="title is-1 publication-title">
-                            🂡 AceCoder: Acing Coder RL via Automated Test-Case Synthesis
+                            Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning
                         </h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                                <a href="https://www.wyett-zeng.com/about.html" style="text-decoration: none; color: inherit;"><sup>♠️</sup>Huaye Zeng*</a>,
+                                <sup>1</sup>Chi Ruan
                             </span>
                             <span class="author-block">
-                                <a href="https://jdf-prog.github.io/" style="text-decoration: none; color: inherit;"><sup>♠️</sup>Dongfu Jiang*</a>,
+                                <a href="https://jdf-prog.github.io/" style="text-decoration: none; color: inherit;"><sup>1,2</sup>Dongfu Jiang*</a>,
                             </span>
                             <span class="author-block">
-                                <sup>♥</sup>Haozhe Wang
+                                <sup>1,2</sup>Yubo Wang
                             </span>,
                             <span class="author-block">
-                                Ping Nie
-                            </span>,
-                            <span class="author-block">
-                                <sup>♦</sup>Xiaotong Chen
-                            </span>,
-                            <span class="author-block">
-                                <a href="https://wenhuchen.github.io/" style="text-decoration: none; color: inherit;"><sup>♠️</sup>Wenhu Chen</a>,
+                                <a href="https://wenhuchen.github.io/" style="text-decoration: none; color: inherit;"><sup>1,2</sup>Wenhu Chen</a>,
                             </span>
                         </div>
 
@@ -52,15 +46,12 @@
 
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                                <sup>♠️</sup>University of Waterloo,
-                                <sup>♥</sup>HKUST,
-                                <sup>♦</sup>NetMind.AI
+                                <sup>1</sup>University of Waterloo,
+                                <sup>2</sup>Vector Institute,
                             </span>
                             <br>
-                            <span class="author-block">*Equal Contribution</span><br>
                             <span class="author-block">Corresponding to:</span>
-                            <span class="author-block"><a href="mailto:w33zeng@uwaterloo.ca">w33zeng@uwaterloo.ca</a>,</span>
-                            <span class="author-block"><a href="mailto:dongfu.jiang@uwaterloo.ca">dongfu.jiang@uwaterloo.ca</a>,</span>
+                            <span class="author-block"><a href="mailto:cruan059@uottawa.ca">cruan059@uottawa.ca</a>,</span>
                             <span class="author-block"><a href="mailto:wenhuchen@uwaterloo.ca">wenhuchen@uwaterloo.ca</a></span>
                         </div>
 
@@ -68,7 +59,7 @@
                             <div class="publication-links">
                                 <!-- GitHub link -->
                                 <span class="link-block">
-                                    <a href="https://github.com/TIGER-AI-Lab/AceCoder" target="_blank"
+                                    <a href="https://github.com/TIGER-AI-Lab/Critique-Coder" target="_blank"
                                     class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon">
                                         <i class="fab fa-github"></i>
@@ -78,7 +69,7 @@
                                 </span>
 
                                 <span class="link-block">
-                                    <a href="https://arxiv.org/abs/2502.01718" target="_blank"
+                                    <a href="https://www.arxiv.org/abs/2509.22824" target="_blank"
                                     class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon">
                                         <i class="ai ai-arxiv"></i>
@@ -88,44 +79,25 @@
                                 </span>
 
                                 <span class="link-block">
-                                  <a href="https://huggingface.co/datasets/TIGER-Lab/AceCode-87K" target="_blank"
+                                  <a href="https://huggingface.co/collections/TIGER-Lab/critique-coder-68dbdcdf09dbf87ed11822e4" target="_blank"
                                   class="external-link button is-normal is-rounded is-dark">
                                       <span class="icon">
                                         🤗
                                       </span>
-                                      <span>AceCode-87K</span>
+                                      <span>Critique-Coder</span>
                                   </a>
                                 </span>
 
                                 <span class="link-block">
-                                  <a href="https://huggingface.co/datasets/TIGER-Lab/AceCodePair-300K" target="_blank"
+                                  <a href="https://huggingface.co/datasets/TIGER-Lab/rStar-Critique-Data" target="_blank"
                                   class="external-link button is-normal is-rounded is-dark">
                                       <span class="icon">
                                         🤗
                                       </span>
-                                      <span>AceCode-Pairs</span>
-                                  </a>
-                                </span>
-
-                                <span class="link-block">
-                                  <a href="https://huggingface.co/collections/TIGER-Lab/acecoder-67a16011a6c7d65cad529eba" target="_blank"
-                                  class="external-link button is-normal is-rounded is-dark">
-                                      <span class="icon">
-                                        🤗
-                                      </span>
-                                      <span>Reward Models</span>
+                                      <span>rStar-Critique-Data</span>
                                   </a>
                                 </span>
                                 
-                                <span class="link-block">
-                                  <a href="https://huggingface.co/collections/TIGER-Lab/acecoder-67a16011a6c7d65cad529eba" target="_blank"
-                                  class="external-link button is-normal is-rounded is-dark">
-                                      <span class="icon">
-                                        🤗
-                                      </span>
-                                      <span>RL Models</span>
-                                  </a>
-                                </span>
                             </div>
                         </div>
                     </div>
@@ -140,17 +112,10 @@
           <!-- Abstract. -->
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-              <h2 class="title is-3">🔔News</h2>
+              <h2 class="title is-3">Abstract</h2>
               <div class="content has-text-justified">
                 <p>
-                    <b>🔥[2025-02-03] Our paper <a href="https://arxiv.org/abs/2502.01718">AceCoder</a> is out. <a href="https://huggingface.co/collections/TIGER-Lab/acecoder-67a16011a6c7d65cad529eba">Models</a> and <a href="https://huggingface.co/datasets/TIGER-Lab/AceCode-87K">Datasets</a> are also released 🚀.</b>
-                </p>
-              </div>
-              <h2 class="title is-3">Introduction</h2>
-              <div class="content has-text-justified">
-                <p>
-                    Most progress in recent coder models has been driven by supervised fine-tuning (SFT), while the potential of reinforcement learning (RL) remains largely unexplored, primarily due to the lack of reliable reward data/model in the code domain. In this paper, we address this challenge by leveraging automated large-scale test-case synthesis to enhance code model training. Specifically, we design a pipeline that generates extensive (question, test-cases) pairs from existing code data. Using these test cases, we construct preference pairs based on pass rates over sampled programs to train reward models with Bradley-Terry loss. It shows an average of <b>10</b>-point improvement for Llama-3.1-8B-Ins and <b>5</b>-point improvement for Qwen2.5-Coder-7B-Ins through best-of-32 sampling, making the 7B model <b>on par with</b> 236B DeepSeek-V2.5. Furthermore, we conduct reinforcement learning with both reward models and test-case pass rewards, leading to consistent improvements across HumanEval, MBPP, BigCodeBench, and LiveCodeBench (V4). Notably, we follow the R1-style training to start from Qwen2.5-Coder-base directly and show that our RL training can improve model on HumanEval-plus by over <b>25%</b> and MBPP-plus by <b>6%</b> for merely <b>80</b> optimization steps. We believe our results highlight the huge potential of reinforcement learning in coder models. 
-                </p>
+                    Reinforcement Learning (RL) has emerged as a popular training paradigm, particularly when paired with reasoning models. While effective, it primarily focuses on generating responses and lacks mechanisms to explicitly foster critique or reflection. Several recent studies, like Critique-Fine-Tuning (CFT) and Critique-Guided-Distillation (CGD) have shown the benefits of explicitly teaching LLMs how to critique. Motivated by them, we propose <b>Critique Reinforcement Learning</b> (CRL), where the model is tasked with generating a critique for a given (question, solution) pair. The reward is determined solely by whether the final judgment label <b>c</b> of the generated critique aligns with the ground-truth judgment <b>c*</b>. Building on this point, we introduce <b>Critique-Coder</b>, which is trained on a hybrid of RL and CRL by substituting 20% of the standard RL data with CRL data. We fine-tune multiple models (Critique-Coder) and evaluate them on different benchmarks to show their advantages over RL-only models.  We show that Critique-Coder consistently outperforms RL-only baselines on all the evaluated benchmarks. Notably, our </b>Critique-Coder-8B</b> can reach over <b>60%</b> on LiveCodeBench (v5), outperforming other reasoning models like DeepCoder-14B and GPT-o1. Beyond code generation, </b>Critique-Coder</b> also demonstrates enhanced general reasoning abilities, as evidenced by its better performance on logic reasoning tasks from the BBEH dataset. This indicates that the application of CRL on coding datasets enhances general reasoning and critique abilities, which are transferable across a broad range of tasks. Hence, we believe that CRL works as a great complement to standard RL for LLM reasoning.                </p>
               </div>
             </div>
           </div>
@@ -160,9 +125,8 @@
 
     <section class="hero is-light is-small">
         <div class="hero-body has-text-centered">
-          <h1 class="title is-1 acecoder">
-              🂡
-            <span class="acecoder">AceCoder</span>
+          <h1 class="title is-1 critique-coder">
+            <span class="critique-coder">Critique-Coder</span>
           </h1>
         </div>
     </section>
@@ -175,11 +139,11 @@
               <h2 class="title is-3">Overview</h2>
               <div class="content has-text-justified">
                 <p>
-                    We introduce <b>AceCoder</b>, the first work to propose a fully automated pipeline for synthesizing large-scale reliable tests used for the reward model training and reinforcement learning in the coding scenario. To do this, we curated the dataset <b>AceCode-89K</b>, where we start from a seed code dataset and prompt powerful LLMs to "imagine" proper test cases for the coding question and filter the noisy ones. We sample inferences from existing coder models and compute their pass rate as the reliable and verifiable rewards for both training the reward model and conducting the reinforcement learning for coder LLM.
+                    We introduce <b>CRL</b>, a novel reinforcement learning (RL) training framework that incorporates critique learning within the RL paradigm. This novel learning approach enhances the model’s critique and reasoning abilities, addressing the lack of critique and reflection incentives typically found in standard RL frameworks. Building on this foundation, we introduce <b>Critique-Coder</b>, a model combining CRL and RL to leverage the strengths of both. CRL fosters critical thinking and reasoning, while RL focuses on optimizing problem-solving. 
                 </p>
                 <div class="content has-text-centered">
-                    <img src="static/images/ac_overview.png" alt="algebraic reasoning" width="100%"/>
-                    <p> Overall Workflow of our model: We start from the seed code dataset to create well-formatted questions and corresponding test cases. Then we adopt strong models like GPT-4o-mini to filter the noisy test cases. Finally, we adopt these test cases to harvest positive and negative program pairs for reward model training and RL.</p>
+                    <img src="static/images/crl_teaser.jpg" alt="algebraic reasoning" width="100%"/>
+                    <p> Comparison between CRL and Standard RL. Standard RL generates solutions based on input questions and evaluates them by executing test cases, while CRL critiques the solution for the paired question and compares the resulting conclusion with the GT to determine its correctness. Experiment shows that RL+CRL can improve not only accuracy, but also the code quality.</p>
                 </div>
               </div>
             </div>
@@ -187,14 +151,14 @@
   
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-              <h2 class="title is-3">Best-of-N Results</h2>
+              <h2 class="title is-3">Critique-Coder Results</h2>
               <div class="content has-text-justified">
                 <p>
-                    We trained two reward model <a href="https://huggingface.co/TIGER-Lab/AceCodeRM-7B">AceCodeRM-7B</a> and <a href="https://huggingface.co/TIGER-Lab/AceCodeRM-32B">AceCodeRM-32B</a> on the constructed <a href="https://huggingface.co/datasets/TIGER-Lab/AceCodePair-300K">preference pairs</a>. We evaluate the performance of our reward models through the best-of-N experiments on the 4 popular coding benchmarks. Results show consistent improvement across all benchmarks, demonstrating the effectiveness of our reward models.
+                    We conducted experiments on two models, Qwen3-4B and Qwen3-8B, in thinking mode. Compared with the base models, Critique-Coder leads to consistent and notable improvements across benchmarks of varying difficulty levels. On Qwen3-4B, for example, the LiveCodeBench score of Critique-Coder rises from 54.2 to <b>59.0</b>, a gain of <b>+4.8</b>, surpassing the larger Qwen3-8B baseline by <b>+1.5</b> points. Under identical datasets and training configurations, replacing part of the RL data with CRL consistently yields superior results across all benchmarks. On Qwen3-4B, Critique-Coder exceeds the Qwen3-4B-RL by <b>+2.4</b> points on LiveCodeBench and improves the overall benchmark average by <b>+1.5</b> points.
                 </p>
                 <div class="box m-5">
                     <div class="content has-text-centered">
-                      <img src="static/images/ac_table2.png" alt="main best-of-N results" class="center" width="80%"/>
+                      <img src="static/images/main_table1.jpg" alt="main best-of-N results" class="center" width="90%"/>
                     </div>
                   </div>
               </div>
@@ -204,67 +168,19 @@
 
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-              <h2 class="title is-3">RL Results</h2>
+              <h2 class="title is-3">Logic Reasoning Results</h2>
               <div class="content has-text-justified">
                 <p>
-                    We perform RL training from three policy models: <a href="https://huggingface.co/Qwen/Qwen2.5-7B-Instruct">Qwen2.5-7B-Instruct</a> and <a href="https://huggingface.co/Qwen/Qwen2.5-Coder-7B">Qwen2.5-Coder-7B-Base</a> and <a href="https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct">Qwen2.5-Coder-7B-Instruct</a>. Two types of reward can be used, i.e. the trained reward model RM-7B and the rule-based reward, i.e. pass rate over the test cases in dataset. During training, we set the pass rate to be a binary reward, which is 1.0 when all test cases passed, otherwise 0. Similar to DeepSeek-R1, we also experiment with RL from the base model because SFT may cause the search space of the model to be stuck in the local minimum. Since coding is also a highly verifiable task like math, we include the Qwen2.5-Coder-7B-Base in our experiments. We see consisteny performance improvement across all benchmarks. And directly RL from the Base Qwen2.5-Coder model can get <b>25%</b> improvement on HumanEval-plus and <b>6%</b> on MBPP-plus within just <b>80</b> optimization steps.
+                    To examine whether the critique and reasoning abilities learned by Critique-Coder extend beyond coding tasks, we further evaluate the model on the BIG-Bench Extra Hard (BBEH) logic reasoning benchmarks. As shown in the table, Critique-Coder achieves consistent improvements over both the baseline Qwen3-4B and its RL-trained variant across all four reasoning subtasks.
                 </p>
                 <div class="box m-5">
                     <div class="content has-text-centered">
-                      <img src="static/images/ac_table3.png" alt="RL results" class="center" width="80%"/>
+                      <img src="static/images/logic_table2.jpg" alt="RL results" class="center" width="92%"/>
                     </div>
                   </div>
               </div>
             </div>
           </div>
-
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">Comparison with existing RM</h2>
-              <div class="content has-text-justified">
-                <p>
-                  Existing top-ranked reward models on Reward Bench can perform pretty bad for best-of-N sampling in the coding scenarion, and sometime can underperform the greedy results. However, our AceCodeRM-7B consistently outperform them with an average of <b>6.9</b> improvement 
-                </p>
-                <div class="box m-5">
-                    <div class="content has-text-centered">
-                      <img src="static/images/ac_table4.png" alt="Comparion with other RM" class="center" width="80%"/>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">Test case filtering matters</h2>
-              <div class="content has-text-justified">
-                <p>
-                  We also conduct experiments to investigate how filtering the test cases with a proxy model can affect the results. As shown in table, training RM on data after the filtering improve the performance significantly, especially for those hard code questions like MBPP-Plus and BigCodeBench-Hard (C/I). We believe this is because the test case filtering can ensure the remaining ones are consistent with each other and thus point to the same implicit program, which improves the quality of the rewards. 
-                </p>
-                <div class="box m-5">
-                    <div class="content has-text-centered">
-                      <img src="static/images/ac_table5.png" alt="Test case filtering matters" class="center" width="80%"/>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">RM backbone matters</h2>
-              <div class="content has-text-justified">
-                <p>
-                  We show that Qwen2.5-Coder is a better backbone for the reward model compared to Llama-3.1-8B. This is because the Qwen2.5-Coder models have been pre-trained on way more code-related data compared to the Llama-3.1 models, and thus more knowledgeable when tuning it into a reward model.
-                </p>
-                <div class="box m-5">
-                    <div class="content has-text-centered">
-                      <img src="static/images/ac_table6.png" alt="RM Backbone Matters" class="center" width="80%"/>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div> -->
 
         </div>
       </section>
@@ -274,12 +190,12 @@
         <div class="container is-max-desktop content">
             <h2 class="title">Reference</h2>
             Please kindly cite our paper if you use our code or results:
-            <pre><code>@article{AceCoder,
-    title={AceCoder: Acing Coder RL via Automated Test-Case Synthesis},
-    author={Zeng, Huaye and Jiang, Dongfu and Wang, Haozhe and Nie, Ping and Chen, Xiaotong and Chen, Wenhu},
+            <pre><code>@article{ruan2025critiquecoder,
+    title={Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning},
+    author={Ruan, Chi and Jiang, Dongfu and Wang, Yubo and Chen, Wenhu},
     journal={ArXiv},
     year={2025},
-    volume={2502.01718}
+    volume={2509.22824}
 }</code></pre>
         </div>
     </section>
