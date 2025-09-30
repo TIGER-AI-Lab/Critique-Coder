@@ -2,8 +2,8 @@
 
 | [**🚀Project Page**](https://tiger-ai-lab.github.io/ScholarCopilot/) | [**📖Paper**](https://arxiv.org/abs/2509.22824) | [**🤗Data**](https://huggingface.co/datasets/TIGER-Lab/rStar-Critique-Data) | [**🤗Model**](https://huggingface.co/TIGER-Lab/ScholarCopilot-v1) |
 
-
-## Installation
+## Get Started
+### Installation
 ```bash
 git clone https://github.com/TIGER-AI-Lab/Critique-Coder.git
 cd Critique-Coder
@@ -14,12 +14,12 @@ pip install -e ".[vllm,acecoder]"
 pip install "flash-attn<2.8.0" --no-build-isolation
 ```
 
-## Dataset Preparation
+### Dataset Preparation
 ```bash
 hf download TIGER-Lab/rStar-Critique-Data --local-dir ./data/critique-coder-dataset --repo dataset
 ```
 
-## Training
+### Training
 ```bash
 bash examples/train/train_qwen3_4b_16k.sh
 ```
