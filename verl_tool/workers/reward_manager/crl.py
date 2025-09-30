@@ -161,13 +161,13 @@ class CRLRewardManager:
         false_count = results.count(False)
         total_true_false = true_count + false_count
         true_ratio = true_count / total_true_false if total_true_false > 0 else 0
-        print(f"result, True在True和False中的比例是: {true_ratio}")
-        print('correctness: ', acecoder_correctness)
+        print(f"Result: The ratio of True values to total True and False is {true_ratio}")
+        # print('correctness: ', acecoder_correctness)
         true_count = acecoder_correctness.count(True)
         false_count = acecoder_correctness.count(False)
         total_true_false = true_count + false_count
         true_ratio = true_count / total_true_false if total_true_false > 0 else 0
-        print(f"correctness, True在True和False中的比例是: {true_ratio}")
+        print(f"Correctness: The ratio of True values in the True/False set is {true_ratio}")
         assert len(results) == len(acecoder_correctness), f'length of results {len(results)} and correctness {len(acecoder_correctness)} must be the same. length of response_str {len(response_str)}'
         
         for result, correctness, score in zip(results, acecoder_correctness, scores):
