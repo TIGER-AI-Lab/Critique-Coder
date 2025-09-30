@@ -13,3 +13,8 @@ pip install "flash-attn<2.8.0" --no-build-isolation
 ```bash
 hf download chiruan/crl_test --local-dir ./data/critique-coder-dataset --repo dataset
 ```
+
+## Training
+```bash
+bash examples/train/train_qwen3_4b_16k.sh
+```
