@@ -17,7 +17,7 @@ packages = ["verl_tool"]  # Explicitly specify only the verl_tool package
 
 [project.optional-dependencies]
 vllm = [
-    "vllm==0.8.5",
+    "vllm==0.8.5.post1",
 ]
 acecoder = [
     "AceCoder @ git+https://github.com/TIGER-AI-Lab/AceCoder.git@dev",
