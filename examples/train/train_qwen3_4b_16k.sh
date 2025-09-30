@@ -1,18 +1,17 @@
 set -x
-deepcoder=deepcoder_without_livecode/all-naive
-dataset_name=rStar_filtered_30_200_thinking_prompt_qwen3_think_02_08_crl/all-naive
+dataset_name=critique-coder-dataset
 train_data=[$(pwd)/data/${dataset_name}/train.parquet]
-val_data=[$(pwd)/data/${deepcoder}/test.parquet]
+val_data=[$(pwd)/data/${dataset_name}/test.parquet]
 
-model_name='/map-vepfs/chi/huggingface/hub/Qwen3-4B'
+model_name=Qwen/Qwen3-4B
 rl_alg=grpo # gae(ppo) or grpo, if grpo, then better set n>1 otherwise the group norm can not be effective
-n_gpus_per_node=4
+n_gpus_per_node=8
 n_nodes=1
 n=8
 batch_size=128
 ppo_mini_batch_size=64
-max_prompt_length=6144
-max_response_length=32768
+max_prompt_length=4096
+max_response_length=16384
 max_obs_length=512
 temperature=0.6
 top_p=0.95
@@ -38,7 +37,7 @@ mask_observations=True # mask observations for kl loss and gradient descent
 enable_mtrl=False # enable multi-turn training
 max_action_length=2048
 model_pretty_name=$(echo $model_name | tr '/' '_' | tr '[:upper:]' '[:lower:]')
-run_name_postfix="qwen3_4b_02_08_crl_08-dapo-no-tool"
+run_name_postfix="qwen3_4b_16k_grpo"
 if [ "$enable_agent" = "True" ]; then
     run_name="${reward_manager}-${strategy}-agent-${model_pretty_name}-${rl_alg}-n${n}-b${batch_size}-t${temperature}-lr${lr}${run_name_postfix}"
 else
