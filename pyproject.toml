@@ -8,7 +8,7 @@ dependencies = [
     "fire>=0.7.0",
     "verl==0.4.1.dev0",
     "scipy==1.15.2",
-    "ray==2.48.0",
+    "ray==2.46.0",
 ]
 
 [tool.uv.sources]
