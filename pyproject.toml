@@ -9,6 +9,7 @@ dependencies = [
     "verl==0.4.1.dev0",
     "scipy==1.15.2",
     "ray==2.46.0",
+    "qwen_vl_utils==0.0.11",
 ]
 
 [tool.uv.sources]
