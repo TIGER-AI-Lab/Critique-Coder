@@ -2,6 +2,8 @@
 
 ## Installation
 ```bash
+git clone https://github.com/TIGER-AI-Lab/Critique-Coder.git
+cd Critique-Coder
 conda create --name critique-coder python=3.10
 conda activate critique-coder
 pip install -e verl
