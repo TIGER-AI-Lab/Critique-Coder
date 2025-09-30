@@ -26,9 +26,3 @@ hf download Critique-Coder/rStar-Critique-Data --local-dir ./data/critique-coder
 ```bash
 bash examples/train/train_qwen3_4b_16k.sh
 ```
-
-## Evaluation
-### Download Model
-```bash
-hf download Critique-Coder/Critique-Coder-4B --local-dir ./models/Critique-Coder-4B
-```
