@@ -2,6 +2,9 @@
 
 | [**🚀Project Page**](https://tiger-ai-lab.github.io/ScholarCopilot/) | [**📖Paper**](https://arxiv.org/abs/2509.22824) | [**🤗Data**](https://huggingface.co/datasets/TIGER-Lab/rStar-Critique-Data) | [**🤗Model**](https://huggingface.co/TIGER-Lab/ScholarCopilot-v1) |
 
+## Overview
+![./assets/images/ac_overview.png](./assets/images/ac_overview.png)
+
 ## Get Started
 ### Installation
 ```bash
