@@ -23,3 +23,9 @@ hf download TIGER-Lab/rStar-Critique-Data --local-dir ./data/critique-coder-data
 ```bash
 bash examples/train/train_qwen3_4b_16k.sh
 ```
+
+## Inference
+### Download Model
+```bash
+hf download TIGER-Lab/Critique-Coder-4B --local-dir ./models/Critique-Coder-4B
+```
