@@ -26,3 +26,5 @@ hf download Critique-Coder/rStar-Critique-Data --local-dir ./data/critique-coder
 ```bash
 bash examples/train/train_qwen3_4b_16k.sh
 ```
+### Evaluation
+We use [Evalplus](https://github.com/evalplus/evalplus), [bigcodebench](https://github.com/bigcode-project/bigcodebench), [LiveCodeBench](https://github.com/LiveCodeBench/LiveCodeBench) for evaluation of HumanEval(+), MBPP(+), BigCodeBench, LiveCodeBench respectively.
