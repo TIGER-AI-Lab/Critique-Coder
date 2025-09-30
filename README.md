@@ -1,6 +1,6 @@
 # Critique-Coder
 
-| [**🚀Project Page**](https://tiger-ai-lab.github.io/ScholarCopilot/) | [**📖Paper**](https://arxiv.org/abs/2509.22824) | [**🤗Data**](https://huggingface.co/datasets/TIGER-Lab/ScholarCopilot-Data-v1/) | [**🤗Model**](https://huggingface.co/TIGER-Lab/ScholarCopilot-v1) |
+| [**🚀Project Page**](https://tiger-ai-lab.github.io/ScholarCopilot/) | [**📖Paper**](https://arxiv.org/abs/2509.22824) | [**🤗Data**](https://huggingface.co/datasets/TIGER-Lab/rStar-Critique-Data) | [**🤗Model**](https://huggingface.co/TIGER-Lab/ScholarCopilot-v1) |
 
 
 ## Installation
