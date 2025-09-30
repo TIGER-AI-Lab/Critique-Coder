@@ -11,5 +11,5 @@ pip install "flash-attn<2.8.0" --no-build-isolation
 
 ## Dataset Preparation
 ```bash
-hf download chiruan/crl_test --local-dir ./data/critique-coder-dataset
+hf download chiruan/crl_test --local-dir ./data/critique-coder-dataset --repo dataset
 ```
