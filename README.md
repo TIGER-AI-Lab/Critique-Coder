@@ -1,6 +1,6 @@
 # Critique-Coder
 
-| [**🚀Project Page**](https://tiger-ai-lab.github.io/ScholarCopilot/) | [**📖Paper**](https://arxiv.org/abs/2509.22824) | [**🤗Data**](https://huggingface.co/datasets/Critique-Coder/rStar-Critique-Data) | [**🤗Model**]((https://huggingface.co/Critique-Coder)) |
+| [**🚀Project Page**](https://tiger-ai-lab.github.io/ScholarCopilot/) | [**📖Paper**](https://arxiv.org/abs/2509.22824) | [**🤗Data**](https://huggingface.co/datasets/Critique-Coder/rStar-Critique-Data) | [**🤗Model**](https://huggingface.co/Critique-Coder) |
 
 ## Overview
 ![./assets/images/ac_overview.png](./assets/images/ac_overview.png)
