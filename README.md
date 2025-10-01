@@ -28,3 +28,17 @@ bash examples/train/train_qwen3_4b_16k.sh
 ```
 ### Evaluation
 We use [EvalPlus](https://github.com/evalplus/evalplus), [BigCodeBench](https://github.com/bigcode-project/bigcodebench), [Aider-Polyglot](https://github.com/Aider-AI/aider/tree/main/benchmark), [LiveCodeBench](https://github.com/LiveCodeBench/LiveCodeBench) for the evaluation of EvalPlus, BigCodeBench, Aider-Polyglot, LiveCodeBench, respectively.
+
+## Citations
+If you find this work helpful, please cite us with:
+```
+@misc{ruan2025critiquecoderenhancingcodermodels,
+  title={Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning},
+  author={Chi Ruan and Dongfu Jiang and Yubo Wang and Wenhu Chen},
+  year={2025},
+  eprint={2509.22824},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2509.22824}
+}
+```
