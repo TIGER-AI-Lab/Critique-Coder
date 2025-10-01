@@ -19,7 +19,7 @@ pip install "flash-attn<2.8.0" --no-build-isolation
 
 ### Dataset Preparation
 ```bash
-hf download Critique-Coder/rStar-Critique-Data --local-dir ./data/critique-coder-dataset --repo dataset
+hf download TIGER-Lab/rStar-Critique-Data --local-dir ./data/critique-coder-dataset --repo dataset
 ```
 
 ### Training
