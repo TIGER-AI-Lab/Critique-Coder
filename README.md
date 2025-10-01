@@ -18,6 +18,9 @@ pip install "flash-attn<2.8.0" --no-build-isolation
 ```
 
 ### Dataset Preparation
+We did extensive filtering for rStar-Coder to build rStar-Coder-Critique data:
+![./assets/images/crl_teaser.jpg](./assets/images/dataset.png)
+
 ```bash
 hf download TIGER-Lab/rStar-Critique-Data --local-dir ./data/critique-coder-dataset --repo dataset
 ```
