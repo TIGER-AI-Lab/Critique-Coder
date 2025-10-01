@@ -32,13 +32,11 @@ We use [EvalPlus](https://github.com/evalplus/evalplus), [BigCodeBench](https://
 ## Citations
 If you find this work helpful, please cite us with:
 ```
-@misc{ruan2025critiquecoderenhancingcodermodels,
-  title={Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning},
-  author={Chi Ruan and Dongfu Jiang and Yubo Wang and Wenhu Chen},
-  year={2025},
-  eprint={2509.22824},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL},
-  url={https://arxiv.org/abs/2509.22824}
+@article{ruan2025critiquecoder,
+    title={Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning},
+    author={Ruan, Chi and Jiang, Dongfu and Wang, Yubo and Chen, Wenhu},
+    journal={ArXiv},
+    year={2025},
+    volume={2509.22824}
 }
 ```
